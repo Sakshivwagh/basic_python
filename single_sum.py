@@ -20,3 +20,21 @@ Example
   Output: 2
 
 """
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Implementation in Python
+
+def digital_root(n):
+    while n >= 10:
+        n = sum(int(digit) for digit in str(n))
+    return n
+
+num = int(input("Enter a number: "))
+
+result = digital_root(num)
+print("Single digit sum:", result)
+
+
+Output-
+Enter a number: 987
+Single digit sum: 6
