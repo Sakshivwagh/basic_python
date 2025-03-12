@@ -25,15 +25,16 @@ Example
 Implementation in Python
 
 def digital_root(n):
-    while n >= 10:
-        n = sum(int(digit) for digit in str(n))
+    while n > 9:
+        temp = 0
+        while n > 0:
+            temp += n % 10
+            n //= 10
+        n = temp
     return n
 
 num = int(input("Enter a number: "))
-
-result = digital_root(num)
-print("Single digit sum:", result)
-
+print("Single digit sum:", digital_root(num))
 
 Output-
 Enter a number: 987
